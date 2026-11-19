@@ -101,7 +101,7 @@ form.addEventListener('submit',async e=>{e.preventDefault();if(submit.disabled)r
    const top=document.createElement('div');top.className='offer-top';
    const panel=document.createElement('div');panel.className='offer-logo-panel';
    const fallback=document.createElement('span');fallback.className='logo-fallback';fallback.textContent=v.name;
-   const img=document.createElement('img');img.alt='';img.hidden=true;img.decoding='async';img.loading='lazy';img.referrerPolicy='no-referrer';
+   const img=document.createElement('img');img.alt='';img.hidden=true;img.decoding='async';img.loading='eager';img.referrerPolicy='no-referrer';
    let retried=false;
    img.addEventListener('load',()=>{img.hidden=false;fallback.hidden=true});
    img.addEventListener('error',()=>{if(v.backup&&!retried){retried=true;img.src=v.backup;return;}img.hidden=true;fallback.hidden=false;});
